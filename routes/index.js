@@ -22,13 +22,19 @@ app.use(cors());
 
 router.post('/authenticate', authenticate);
 router.get('/current', getCurrent);
-router.get('/home', homepage );
+
 function authenticate(req, res, next) {
   console.log('Authenticating...');
   console.log(req.body);
   if (req.body.userName == 'mv' && req.body.password == 'mv')
   {
-    var token = jwt.sign({ username: req.body.userName, password: req.body.userName }, secret, { expiresIn: '24h' });
+      var rememberMe = req.body.rememberMe;
+      var token;
+      if (rememberMe == 1){
+          token = jwt.sign({ username: req.body.userName, password: req.body.userName }, secret);
+      } else {
+          token = jwt.sign({ username: req.body.userName, password: req.body.userName }, secret, { expiresIn: '24h' });
+      }
     res.status(200).json({ success: true, message: 'User authenticated!', token: token});
 
     //res.status(200)
@@ -54,7 +60,7 @@ const server = app.listen(port, function() {
 // Middleware for Routes that checks for token - Place all routes after this route that require the user to already be logged in
 router.use(function(req, res, next) {
   console.log('checktoken');
-  var token = req.body.token || req.body.query || req.headers['x-access-token']; // Check for token in body, URL, or headers
+  var token = req.body.token || req.body.query || req.headers['x-access-token'] || req.headers['Bearer Token']; // Check for token in body, URL, or headers
 
   // Check if token is valid and not expired
   if (token) {
@@ -72,8 +78,26 @@ router.use(function(req, res, next) {
   }
 });
 
+router.get('/home', homepage );
 function homepage (req, res, next) {
 
   res.status(200)
       .json({message: 'OK'})
+}
+
+
+function sort(req, res, next) {
+    var sortBy = req.body.sortParam;
+    var list1 = Array();
+    res.status(200)
+        .json({message: 'sortByStatus'})
+}
+
+function search(req, res, next) {
+    var searchBy = req.body.searchParam;
+    var valToBeFound = req.body.value;
+
+    var list1 = Array();
+    res.status(200)
+        .json({message: 'sortByStatus'})
 }
