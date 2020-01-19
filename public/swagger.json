@@ -1,9 +1,9 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+    "description" : "This is a sample porject for displaying Campaigns using angular v8 and NodejS using some other amazing tools like swagger",
     "version" : "1.0.0",
-    "title" : "Swagger Petstore",
+    "title" : "Swagger MovingWalls",
     "termsOfService" : "http://swagger.io/terms/",
     "contact" : {
       "email" : "apiteam@swagger.io"
@@ -16,7 +16,7 @@
   "host" : "localhost:4000",
   "tags" : [ {
     "name" : "user",
-    "description" : "Everything about your Pets",
+    "description" : "MovingWalls Campaign",
     "externalDocs" : {
       "description" : "Find out more",
       "url" : "http://swagger.io"
@@ -29,7 +29,7 @@
         "tags" : [ "user" ],
         "summary" : "login",
         "description" : "login",
-        "operationId" : "addPet",
+        "operationId" : "DisplayCampaign",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
