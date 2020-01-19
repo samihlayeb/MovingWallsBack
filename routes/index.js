@@ -162,8 +162,8 @@ function search(req, res, next) {
     var indexStart  = req.body.indexStart;
     var indexEnd = req.body.indexEnd;
     var searchBy = req.body.searchParam;
-    var valToBeFound = req.body.value;
-    var filteredData;
+    var valToBeFound = req.body.value.toLowerCase();
+    var filteredData = new Array();
     switch (searchBy) {
         case "company": {
             filteredData = searchByCompany(valToBeFound); break;
@@ -180,11 +180,11 @@ function search(req, res, next) {
 }
 
 function searchByCompany (valToBeFound) {
-    return dummyData.filter ( campaign => campaign.company == valToBeFound);
+    return dummyData.filter ( campaign => campaign.company.toLowerCase() == valToBeFound);
 }
 function searchByDate (valToBeFound) {
     return dummyData.filter ( campaign => campaign.date == valToBeFound);
 }
 function searchByStatus (valToBeFound) {
-    return dummyData.filter ( campaign => campaign.status == valToBeFound);
+    return dummyData.filter ( campaign => campaign.status.toLowerCase() == valToBeFound);
 }
