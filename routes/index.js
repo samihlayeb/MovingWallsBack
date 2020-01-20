@@ -13,7 +13,7 @@ var swaggerUi = require('swagger-ui-express'),
 
 var dummyData = require('../public/dummyData.json');
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/MovingWalls', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api/v1', router);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
