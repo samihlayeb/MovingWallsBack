@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "body-parser": "latest",
@@ -15,11 +15,11 @@
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
     "rootpath": "^0.1.2",
-    "swagger-ui-express": "^4.1.2",
-    "jsonwebtoken": "^8.5.1"
+    "swagger-ui-express": "^4.1.2"
   },
   "devDependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^8.5.1"
   },
   "engines": {
     "node": "10.16.3"
