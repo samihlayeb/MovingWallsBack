@@ -177,7 +177,6 @@ function search(req, res, next) {
     res.status(200)
         .json({data: filteredData.slice(indexStart,indexEnd), dataSize: dummyData.length})
 }
-//test heroku
 function searchByCompany (valToBeFound) {
     return dummyData.filter ( campaign => campaign.company.toLowerCase() == valToBeFound);
 }
@@ -187,3 +186,4 @@ function searchByDate (valToBeFound) {
 function searchByStatus (valToBeFound) {
     return dummyData.filter ( campaign => campaign.status.toLowerCase() == valToBeFound);
 }
+//test heroku
