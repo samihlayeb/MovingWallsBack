@@ -53,7 +53,7 @@ function getCurrent () {}
 module.exports = router;
 app.use(router);
 const port =
-    process.env.NODE_ENV === 'production' ? process.env.PORT || 80 : 5000;
+    process.env.NODE_ENV === 'production' ? process.env.PORT || 80 : 4000;
 const server = app.listen(port, function() {
     // eslint-disable-next-line no-console
     console.log('Server listening on port ' + port);
