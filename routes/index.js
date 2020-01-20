@@ -173,7 +173,7 @@ function search(req, res, next) {
         case "status": {
             filteredData = searchByStatus(valToBeFound); break;
         }
-    }
+    } 
     res.status(200)
         .json({data: filteredData.slice(indexStart,indexEnd), dataSize: dummyData.length})
 }
