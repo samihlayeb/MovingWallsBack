@@ -20,5 +20,8 @@
   },
   "devDependencies": {
     "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": "10.16.3"
   }
 }
