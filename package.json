@@ -2,11 +2,8 @@
   "name": "movingwallsback",
   "version": "0.0.0",
   "private": true,
-  "engines": {
-    "node": "10.16.3"
-  },
   "scripts": {
-    "start": "node routes/index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "body-parser": "latest",

@@ -12,7 +12,6 @@ var swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('../public/swagger');
 
 var dummyData = require('../public/dummyData.json');
-//testtt heroku
 app.use('/MovingWalls', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api/v1', router);
 app.use(bodyParser.urlencoded({ extended: false }));
